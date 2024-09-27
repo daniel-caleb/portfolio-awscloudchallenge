@@ -184,3 +184,12 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+const counter = document.querySelector(".contact-info .counter-number");
+async function getVisitorCount() {
+  let response = await fetch ("https://r5l4eofrvtrd2fu4zvfcsvl76q0olulu.lambda-url.us-west-2.on.aws/");
+  let data = await response.json();
+  counter.innerHTML = `${data}`;
+}
+
+getVisitorCount();
